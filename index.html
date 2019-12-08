@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 class="jumbotron">Creacion de Usuario</h1>
+            <div id="app">
+                <form id="formExemplo" data-toggle="validator" role="form">
+                    <div class="form-group">
+                        <label for="textNome" class="control-label">Nombre</label>
+                        <input v-model="name" id="textNome" class="form-control" placeholder="Digite su Nombre..." type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputApellido" class="control-label">Apellido</label>
+                        <input v-model="lname" id="inputApellido" class="form-control" placeholder="Digite su Apellido..." type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputUser" class="control-label">Nombre de Usuario</label>
+                        <input v-model="username" id="inputUser" class="form-control" placeholder="Digite su Nombre de Usuario..." type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword" class="control-label">Contraseña</label>
+                        <input v-model="pass" type="password" class="form-control" id="inputPassword" placeholder="Digite su Contraseña...">
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <button v-on:click="crearUserRest" type="button" class="btn btn-primary">Crear con REST</button>
+                            <button v-on:click="crearUserGraph" type="button" class="btn btn-primary">Crear con GraphQL</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="scripts/index.js"></script>
+</body>
+</html>
