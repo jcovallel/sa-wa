@@ -9,7 +9,7 @@ var app = new Vue({
     },
     methods: {
         crearUserRest: function (event) {
-            const url = "http://34.67.131.99:4000/sa-auth-ms/resources/users"; // site that doesn’t send Access-Control-*
+            const url = "sa-api:4000/sa-auth-ms/resources/users"; // site that doesn’t send Access-Control-*
             fetch(url,{
                 method: 'post',
                 headers: {
@@ -24,13 +24,13 @@ var app = new Vue({
                 }).catch(error => { console.log('request failed', error); });
         },
         crearUserGraph:function (event) {
-            fetch("http://34.67.131.99:5000/graphql?", {
+            fetch("sa-api:5000/graphql?", {
                 "credentials": "omit",
                 "headers": {
                     "Accept": "application/json",
                     "Content-Type": "application/json"
                 },
-                "referrer": "http://34.67.131.99:5000/graphiql",
+                "referrer": "sa-api:5000/graphiql",
                 "body": "{\"query\":\"mutation {\\n  createUser(user: {\\n    firstName: \\\""+this.name+"\\\"\\n    lastName: \\\""+this.lname+"\\\"\\n    username: \\\""+this.username+"\\\"\\n    password: \\\""+this.pass+"\\\"\\n  }) {\\n    firstName\\n    lastName\\n    id\\n    username\\n    password\\n  }\\n}\",\"variables\":null}",
                 "method": "POST",
                 "mode": "cors"
